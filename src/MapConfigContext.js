@@ -1,3 +1,5 @@
 import { createContext } from "react";
+import data from "./mapConfig.json";
 
-export const MapConfigContext = createContext();
+const configData = data.MapConfig;
+export const MapConfigContext = createContext(configData);
