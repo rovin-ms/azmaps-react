@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import { Map } from "azure-maps-control";
 import "./AzureMap.css";
 import { MapConfigContext } from "../MapConfigContext";
@@ -6,23 +6,23 @@ import { MapConfigContext } from "../MapConfigContext";
 const AzureMap = () => {
   const mapConfigContext = useContext(MapConfigContext);
 
-  console.log(mapConfigContext);
+  var mapRef = useRef(null);
 
   useEffect(() => {
-    var map = new Map("map-root", {
+    mapRef.current = new Map("map-root", {
       center: [-0.113042, 51.511859],
       zoom: 8,
       view: "Auto",
-      style: mapConfigContext[0].style,
+      style: mapConfigContext.style,
 
       authOptions: {
         authType: "subscriptionKey",
-        subscriptionKey: mapConfigContext[0].subscriptionKey
+        subscriptionKey: mapConfigContext.subscriptionKey
       }
     });
   });
 
-  return <div id="map-root" className="map"></div>;
+  return <div id="map-root" ref={mapRef} className="map"></div>;
 };
 
 export default AzureMap;
