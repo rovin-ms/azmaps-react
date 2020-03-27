@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Temporary location for Azure Maps React components. Includes playground setup for quick testings.
 
 ## Available Scripts
 
