@@ -4,20 +4,20 @@ import "./AzureMap.css";
 import { MapConfigContext } from "../MapConfigContext";
 
 const AzureMap = () => {
-  const mapConfigContext = useContext(MapConfigContext);
+  const config = useContext(MapConfigContext);
 
   var mapRef = useRef(null);
 
   useEffect(() => {
     mapRef.current = new Map("map-root", {
-      center: [-0.113042, 51.511859],
+      center: [config.centerLon, config.centerLat],
       zoom: 8,
       view: "Auto",
-      style: mapConfigContext.style,
+      style: config.style,
 
       authOptions: {
         authType: "subscriptionKey",
-        subscriptionKey: mapConfigContext.subscriptionKey
+        subscriptionKey: config.subscriptionKey
       }
     });
   });
