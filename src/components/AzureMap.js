@@ -11,8 +11,7 @@ const AzureMap = () => {
   useEffect(() => {
     mapRef.current = new Map("map-root", {
       center: [config.centerLon, config.centerLat],
-      zoom: 8,
-      view: "Auto",
+      zoom: config.zoomLevel,
       style: config.style,
 
       authOptions: {
@@ -20,6 +19,11 @@ const AzureMap = () => {
         subscriptionKey: config.subscriptionKey
       }
     });
+  });
+
+  useEffect(() => {
+    console.log(mapRef.current.map);
+    mapRef.current.view = "auto";
   });
 
   return <div id="map-root" ref={mapRef} className="map"></div>;
