@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-
 import React from "react";
 
 import mapConfigData from "./mapConfig.json";

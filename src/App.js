@@ -24,7 +24,7 @@ function App() {
             <NavIcon>
               <i
                 className="fa fa-fw fa-home"
-                style={{ fontSize: "1.75em", color: "#fff",  }}
+                style={{ fontSize: "1.75em", color: "#fff" }}
               />
             </NavIcon>
             <NavText>Home</NavText>

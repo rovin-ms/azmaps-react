@@ -6,6 +6,7 @@ import { MapConfigContext } from "../MapConfigContext";
 const AzureMap = () => {
   //const [state, setState] = useContext(MapConfigContext);
   const [config, setConfig] = useContext(MapConfigContext);
+  console.log(config);
 
   var mapRef = useRef(null);
 
