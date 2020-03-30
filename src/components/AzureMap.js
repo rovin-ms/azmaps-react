@@ -23,18 +23,20 @@ const AzureMap = () => {
   });
 
   useEffect(() => {
-    //Wait until the map resources are ready.
-    mapRef.current.events.add("ready", function() {
-      //Add a style control to the map.
-      mapRef.current.controls.add(
-        new atlas.control.StyleControl({
-          mapStyles: "all"
-        }),
-        {
-          position: "top-left"
-        }
-      );
-    });
+    if (mapRef) {
+      //Wait until the map resources are ready.
+      mapRef.current.events.add("ready", function() {
+        //Add a style control to the map.
+        mapRef.current.controls.add(
+          new atlas.control.StyleControl({
+            mapStyles: "all"
+          }),
+          {
+            position: "top-right"
+          }
+        );
+      });
+    }
   });
 
   return <div id="map-root" ref={mapRef} className="map"></div>;
