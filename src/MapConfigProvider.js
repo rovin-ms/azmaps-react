@@ -1,16 +1,18 @@
-// import React, { createContext, useState } from "react";
-// import mapConfigData from "./mapConfig.json";
+import React, { createContext, useState } from "react";
+import mapConfigData from "./mapConfig.json";
 
-// const MapConfigContext = createContext();
+const configData = mapConfigData.MapConfig[0];
+const MapConfigContext = createContext();
 
-// export const MapConfigProvider = ({ children }) => {
-//   const [mapConfig, setMapConfig] = useState(mapConfigData);
+const MapConfigProvider = ({ children }) => {
+  const [mapConfig, setMapConfig] = useState(configData);
 
-//   console.log(mapConfig);
+  console.log(mapConfig);
 
-//   return (
-//     <MapConfigContext.Provider value={{ mapConfig, setMapConfig }}>
-//       {children}
-//     </MapConfigContext.Provider>
-//   );
-// };
+  return (
+    <MapConfigContext.Provider value={{ mapConfig, setMapConfig }}>
+      {children}
+    </MapConfigContext.Provider>
+  );
+};
+export { MapConfigContext, MapConfigProvider };

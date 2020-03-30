@@ -1,5 +1,7 @@
 import React from "react";
+import { MapConfigProvider } from "./MapConfigContext";
 import AzureMap from "./components/AzureMap";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -20,8 +22,9 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-
-      <AzureMap />
+      <MapConfigProvider>
+        <AzureMap />
+      </MapConfigProvider>
     </div>
   );
 }

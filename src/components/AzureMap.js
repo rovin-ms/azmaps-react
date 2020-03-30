@@ -4,7 +4,8 @@ import "./AzureMap.css";
 import { MapConfigContext } from "../MapConfigContext";
 
 const AzureMap = () => {
-  const config = useContext(MapConfigContext);
+  //const [state, setState] = useContext(MapConfigContext);
+  const [config, setConfig] = useContext(MapConfigContext);
 
   var mapRef = useRef(null);
 

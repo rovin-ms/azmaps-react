@@ -1,5 +1,20 @@
-import { createContext } from "react";
-import data from "./mapConfig.json";
+import { useState, createContext } from "react";
 
-const configData = data.MapConfig[0];
-export const MapConfigContext = createContext(configData);
+import React from "react";
+
+import mapConfigData from "./mapConfig.json";
+
+const configData = mapConfigData.MapConfig[0];
+
+const MapConfigContext = createContext(configData);
+
+const MapConfigProvider = props => {
+  const [state, setState] = useState(configData);
+  return (
+    <MapConfigContext.Provider value={[state, setState]}>
+      {props.children}
+    </MapConfigContext.Provider>
+  );
+};
+
+export { MapConfigContext, MapConfigProvider };
