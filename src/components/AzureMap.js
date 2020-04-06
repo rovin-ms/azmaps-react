@@ -4,9 +4,7 @@ import "./AzureMap.css";
 import { MapConfigContext } from "../MapConfigContext";
 
 const AzureMap = () => {
-  //const [state, setState] = useContext(MapConfigContext);
   const [config, setConfig] = useContext(MapConfigContext);
-  console.log(config);
 
   var mapRef = useRef(null);
 
@@ -36,6 +34,15 @@ const AzureMap = () => {
             position: "top-right"
           }
         );
+      });
+    }
+  });
+
+  useEffect(() => {
+    if (mapRef) {
+      mapRef.current.events.add("ready", function() {
+        if (config.traffic)
+          mapRef.current.setTraffic({ incidents: true, flow: "relative" });
       });
     }
   });
