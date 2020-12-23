@@ -1,7 +1,12 @@
 {
   "MapConfig": [
     {
+<<<<<<< HEAD
       "style": "grayscale_light",
+=======
+      "subscriptionKey": "",
+      "style": "grayscale_dark",
+>>>>>>> 3180eb0cb53680fc3719a2ff4f615a5e451effed
       "centerLat": 51.511859,
       "centerLon": -0.113042,
       "zoomLevel": 8,
