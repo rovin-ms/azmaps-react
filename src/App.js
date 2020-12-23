@@ -5,18 +5,16 @@ import SideNav, {
   Nav,
   NavItem,
   NavIcon,
-  NavText
+  NavText,
 } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import AzureMap from "./components/AzureMap";
-
-console.log(`${process.env.REACT_APP_API_KEY}`);
 
 function App() {
   return (
     <div className="App">
       <SideNav
-        onSelect={selected => {
+        onSelect={(selected) => {
           // Add your code here
         }}
       >

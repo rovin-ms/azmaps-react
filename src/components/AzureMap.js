@@ -16,22 +16,22 @@ const AzureMap = () => {
 
       authOptions: {
         authType: "subscriptionKey",
-        subscriptionKey: config.subscriptionKey
-      }
+        subscriptionKey: `${process.env.REACT_APP_API_KEY}`,
+      },
     });
   });
 
   useEffect(() => {
     if (mapRef) {
       //Wait until the map resources are ready.
-      mapRef.current.events.add("ready", function() {
+      mapRef.current.events.add("ready", function () {
         //Add a style control to the map.
         mapRef.current.controls.add(
           new atlas.control.StyleControl({
-            mapStyles: "all"
+            mapStyles: "all",
           }),
           {
-            position: "top-right"
+            position: "top-right",
           }
         );
       });
@@ -40,7 +40,7 @@ const AzureMap = () => {
 
   useEffect(() => {
     if (mapRef) {
-      mapRef.current.events.add("ready", function() {
+      mapRef.current.events.add("ready", function () {
         if (config.traffic)
           mapRef.current.setTraffic({ incidents: true, flow: "relative" });
       });
