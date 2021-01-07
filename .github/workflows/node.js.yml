@@ -29,4 +29,6 @@ jobs:
          process.env.CI : false
     - run: npm ci
     - run: npm run build --if-present --watchAll=false
+      env:
+        process.env.CI: false 
     - run: npm test
