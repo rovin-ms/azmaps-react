@@ -28,7 +28,4 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present --watchAll=false
       env:
-        CI: false 
-    - run: npm test
-      env:
         CI: false
